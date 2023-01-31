@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>back</title>
+</head>
+<style>
+    body {
+        margin: auto;
+        width: 45%;
+        background-image: url(https://imgur.com/9Ap4hAz.png);
+        background-attachment:fixed;
+    }
+    div {
+        opacity: 70%;
+        border-radius: 5px;
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    .w3-button {
+        border-radius: 10px;
+        opacity: 75%;
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+<header><a href="/getfit/workouts"><button class="w3-button w3-red">Home</button></a></header><br>
+
+<body>
+     <% exercises.forEach(exercise => { %>
+    <div class="w3-panel w3-black w3-card-4">
+        <p>
+            <a href="/getfit/workouts/<%= exercise._id %>"><%= exercise.name %></a>
+       </p>
+    </div>
+   
+    <% }) %>
+</body>
+</html>

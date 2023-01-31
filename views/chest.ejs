@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>back</title>
+</head>
+<style>
+    body {
+        margin: auto;
+        width: 45%;
+        background-image: url(https://imgur.com/9Ap4hAz.png);
+        background-attachment: fixed;
+    }
+    div {
+        opacity: 70%;
+        border-radius: 5px;
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    .w3-button {
+        border-radius: 10px;
+        opacity: 80%;
+    }
+    img {
+        opacity: 100%;
+    }
+    button {
+        margin: 5px;
+        opacity: 100%;
+    }
+    
+</style>
+<header><a href="/getfit/workouts"><button class="w3-button w3-red">Home</button></a></header><br>
+
+<body>
+     <% exercises.forEach(exercise => { %>
+    <div class="w3-panel w3-black w3-card-4">
+        <p>Name:
+           
+                <%= exercise.name %>
+       </p>
+       <p>Body Part:
+        <%= exercise.category %>
+       </p>
+       <p>
+        <img src="<%= exercise.img %>" alt="" width="336" height="252">
+       </p>
+        <p>Equipement needed:
+        <%= exercise.eq %>
+       </p>
+       <p>Number of sets:
+        <%= exercise.sets %>
+       </p>
+       <p>Number of reps:
+        <%= exercise.reps %>
+       </p>
+       <p>Dificulty level:
+        <%= exercise.dificulty %>
+       </p>
+       <p>
+        <iframe src="https://www.youtube.com/embed/<%= exercise.videoUrl %>"  width="336" height="252">
+        </iframe>
+       </p>
+       <button formaction="" class="w3-button w3-red"> Delete</button>
+       <button class="w3-button w3-gray">Edit</button>
+    </div>
+   
+    <% }) %>
+</body>
+</html>
