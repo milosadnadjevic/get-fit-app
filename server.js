@@ -2,6 +2,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const Exercise = require('./models/exercise')
+const methodOverride = require('method-override')
 
 // initialize the app
 const app = express()
@@ -27,6 +28,7 @@ db.on('error', (error) => {
 
 // mount middleware
 app.use(express.urlencoded({extended: false}))
+app.use(methodOverride('_method'))
 
 // mount routes
 
@@ -94,6 +96,11 @@ app.get('/getfit/new', (req, res) => {
 })
 
 // delete
+app.delete('/getfit/workouts/:id', (req, res) => {
+    Exercise.findByIdAndDelete(req.params.id, (eror, deletedExercise) => {
+        res.redirect('/getfit/workouts')
+    })
+})
 
 // update
 
@@ -106,10 +113,17 @@ app.post('/getfit/workouts', (req, res) => {
 })
 
 // edit
+// app.get('/getfit/workouts/:id/edit', (req, res) => {
+//     Exercise.findById(req.params.id, (error, foundExercise) => {
+//         res.render('edit.ejs', {
+//             exercise: foundExercise
+//         })
+//     })
+// })
 
 // show
-app.get('/getfit/workouts/:id', (req, res) => {
-    Exercise.findById(req.params.id, (error, foundExercise) => {
+app.get('/getfit/workouts/:name', (req, res) => {
+    Exercise.findById(req.params.name, (error, foundExercise) => {
         res.render('show.ejs', { exercise: foundExercise})
     })
 })

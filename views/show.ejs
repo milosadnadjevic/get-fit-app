@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>back</title>
+    <title>Show</title>
 </head>
 <style>
     body {
         margin: auto;
         width: 45%;
-        background-image: url(https://imgur.com/9Ap4hAz.png);
+        background-image: url(https://imgur.com/7jBki7h.png);
         background-attachment: fixed;
     }
     div {
@@ -38,7 +38,7 @@
 <header><a href="/getfit/workouts"><button class="w3-button w3-yellow">Home</button></a></header><br>
 
 <body>
-     <% exercise.forEach(exercise => { %>
+     
     <div class="w3-panel w3-yellow w3-card-4">
         <p>Name:
            
@@ -66,10 +66,12 @@
         <iframe src="https://www.youtube.com/embed/<%= exercise.videoUrl %>"  width="336" height="252">
         </iframe>
        </p>
-       <button formaction="" class="w3-button w3-red"> Delete</button>
-       <button class="w3-button w3-gray">Edit</button>
+       <form action="" method="post">
+       <button formaction="/getfit/workouts/<%= exercise._id %>?_method=DELETE" class="w3-button w3-red"> Delete</button>
+       <a href="/getfit/workouts/<%= exercise._id %>/edit"><button class="w3-button w3-gray">Edit</button></a>
+    </form>
     </div>
    
-    <% }) %>
+   
 </body>
 </html>

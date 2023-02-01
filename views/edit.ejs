@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>New Exercise</title>
+    <title>Edit</title>
 </head>
 <style>
     body {
@@ -36,10 +36,10 @@
 <header><a href="/getfit/workouts"><button class="w3-button w3-red">Home</button></a></header><br>
 <body>
     <div class="w3-container w3-black">
-        <h1>Add New Exercise</h1>
+        <h1>Edit: <%= exercise.name %></h1>
       </div>
       
-      <form class="w3-container" action="/getfit/workouts" method="post">
+      <form class="w3-container" action="/getfit/workouts/<%= exercise._id %>?_method=PUT" method="post">
         <p>
         <label>Name</label>
         <input class="w3-input" type="text" name="name"></p>
@@ -65,7 +65,7 @@
         <label>Dificulty</label>
         <input class="w3-input" type="text" name="dificulty"></p>
         <p>
-        <input type="submit" value="Save My Exercise" class="w3-button w3-black"></p>
+        <input type="submit" value="Save" class="w3-button w3-black"></p>
       </form>
 </body>
 </html>
