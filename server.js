@@ -8,7 +8,6 @@ const methodOverride = require('method-override')
 const app = express()
 
 // configure settings
-
 require('dotenv').config()
 const PORT = process.env.PORT
 const DATABASE_URL = process.env.DATABASE_URL
@@ -22,6 +21,7 @@ const db = mongoose.connection
 db.on('connected', () => {
     console.log('Connected to MongoDB')
 })
+
 db.on('error', (error) => {
     console.log('An error occured with MongoDB' + error.message)
 })
@@ -30,7 +30,7 @@ db.on('error', (error) => {
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
 
-// mount routes
+// routes
 
 // index
 app.get('/getfit/workouts', (req, res) => {
@@ -119,7 +119,6 @@ app.post('/getfit/workouts', (req, res) => {
     Exercise.create(req.body, (error, createdExercise) => {
          res.render('workouts.ejs')
     })
-   
 })
 
 // edit
