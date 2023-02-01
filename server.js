@@ -112,14 +112,14 @@ app.post('/getfit/workouts', (req, res) => {
    
 })
 
-// edit
-// app.get('/getfit/workouts/:id/edit', (req, res) => {
-//     Exercise.findById(req.params.id, (error, foundExercise) => {
-//         res.render('edit.ejs', {
-//             exercise: foundExercise
-//         })
-//     })
-// })
+edit
+app.get('/getfit/workouts/:id/edit', (req, res) => {
+    Exercise.findById(req.params.id, (error, foundExercise) => {
+        res.render('edit.ejs', {
+            exercise: foundExercise
+        })
+    })
+})
 
 // show
 app.get('/getfit/workouts/:name', (req, res) => {
