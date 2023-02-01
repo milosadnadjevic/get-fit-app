@@ -36,34 +36,34 @@
 <header><a href="/getfit/workouts"><button class="w3-button w3-red">Home</button></a></header><br>
 <body>
     <div class="w3-container w3-black">
-        <h1>Edit: <%= exercise.name %></h1>
+        <h1>Edit <%= exercise.name %></h1>
       </div>
       
       <form class="w3-container" action="/getfit/workouts/<%= exercise._id %>?_method=PUT" method="post">
         <p>
         <label>Name</label>
-        <input class="w3-input" type="text" name="name"></p>
+        <input class="w3-input" type="text" name="name" value="<%= exercise.name %>"></p>
         <p>
         <label>Body Part</label>
-        <input class="w3-input" type="text" name="category"></p>
+        <input class="w3-input" type="text" name="category" value="<%= exercise.category %>"></p>
         <p>
         <label>Video URL</label>
         <input class="w3-input" type="text" name="videoUrl"></p>
         <p>
         <label>Image URL</label>
-        <input class="w3-input" type="text" name="img"></p>
+        <input class="w3-input" type="text" name="img" value="link to your image goes here.png"></p>
         <p>
         <label>Equipement</label>
-        <input class="w3-input" type="text" name="eq"></p>
+        <input class="w3-input" type="text" name="eq" value="<%= exercise.eq %>"></p>
         <p>
         <label>Sets</label>
-        <input class="w3-input" type="number" name="sets"></p>
+        <input class="w3-input" type="number" name="sets" value="<%= exercise.sets %>"></p>
         <p>
         <label>Reps</label>
-        <input class="w3-input" type="text" name="reps"></p>
+        <input class="w3-input" type="text" name="reps" value="<%= exercise.reps %>"></p>
         <p>
         <label>Dificulty</label>
-        <input class="w3-input" type="text" name="dificulty"></p>
+        <input class="w3-input" type="text" name="dificulty" value="<%= exercise.dificulty %>"></p>
         <p>
         <input type="submit" value="Save" class="w3-button w3-black"></p>
       </form>

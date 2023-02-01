@@ -73,6 +73,20 @@ app.get('/getfit/legs', (req, res) => {
         })
     })
 })
+app.get('/getfit/fullbody', (req, res) => {
+    Exercise.find({category: 'full body'}, (error, fullbodyExercises) => {
+        res.render('fullbody.ejs', {
+            exercises: fullbodyExercises
+        })
+    })
+})
+app.get('/getfit/abs', (req, res) => {
+    Exercise.find({category: 'abs'}, (error, absExercises) => {
+        res.render('abs.ejs', {
+            exercises: absExercises
+        })
+    })
+})
 app.get('/getfit/functional', (req, res) => {
     Exercise.find({category: 'functional'}, (error, functionalExercises) => {
         res.render('functional.ejs', {
@@ -80,15 +94,6 @@ app.get('/getfit/functional', (req, res) => {
         })
     })
 })
-
-
-// app.get('/getfit/back', (req, res) => {
-//     Exercise.find({}, (error, allExercise) => {
-//         res.render('back.ejs', {
-//             exercise: allExercise
-//         })
-//     })
-// })
 
 // new
 app.get('/getfit/new', (req, res) => {
@@ -103,6 +108,11 @@ app.delete('/getfit/workouts/:id', (req, res) => {
 })
 
 // update
+app.put('/getfit/workouts/:id', (req, res) => {
+    Exercise.findByIdAndUpdate(req.params.id, req.body, (error, Exercise) => {
+        res.redirect('/getfit/workouts')
+    })
+})
 
 // create
 app.post('/getfit/workouts', (req, res) => {
@@ -112,7 +122,7 @@ app.post('/getfit/workouts', (req, res) => {
    
 })
 
-edit
+// edit
 app.get('/getfit/workouts/:id/edit', (req, res) => {
     Exercise.findById(req.params.id, (error, foundExercise) => {
         res.render('edit.ejs', {

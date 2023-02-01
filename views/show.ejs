@@ -35,11 +35,11 @@
     }
     
 </style>
-<header><a href="/getfit/workouts"><button class="w3-button w3-yellow">Home</button></a></header><br>
+<header><a href="/getfit/workouts"><button class="w3-button w3-red">Home</button></a></header><br>
 
 <body>
      
-    <div class="w3-panel w3-yellow w3-card-4">
+    <div class="w3-panel w3-black w3-card-4">
         <p>Name:
            
                 <%= exercise.name %>
@@ -68,8 +68,8 @@
        </p>
        <form action="" method="post">
        <button formaction="/getfit/workouts/<%= exercise._id %>?_method=DELETE" class="w3-button w3-red"> Delete</button>
-       <a href="/getfit/workouts/<%= exercise._id %>/edit"><button class="w3-button w3-gray">Edit</button></a>
-    </form>
+       </form><a href="/getfit/workouts/<%= exercise._id %>/edit"><button class="w3-button w3-gray">Edit</button></a>
+       
     </div>
    
    
