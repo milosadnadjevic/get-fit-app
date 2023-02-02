@@ -80,6 +80,13 @@ router.delete('/getfit/workouts/:id', (req, res) => {
 
 // update
 router.put('/getfit/workouts/:id', (req, res) => {
+    function extractVideoId(url) {
+        const parts = url.split('?v=')
+        return parts[parts.length -1]
+    }
+    const url = req.body.videoUrl
+    const videoUrl = extractVideoId(url)
+    req.body.videoUrl = videoUrl
     Exercise.findByIdAndUpdate(req.params.id, req.body, (error, Exercise) => {
         res.redirect('/getfit/workouts')
     })
@@ -87,6 +94,14 @@ router.put('/getfit/workouts/:id', (req, res) => {
 
 // create
 router.post('/getfit/workouts', (req, res) => {
+    function extractVideoId(url) {
+        const parts = url.split('?v=')
+        return parts[parts.length -1]
+    }
+    const url = req.body.videoUrl
+    const videoUrl = extractVideoId(url)
+    req.body.videoUrl = videoUrl
+
     Exercise.create(req.body, (error, createdExercise) => {
          res.render('workouts.ejs')
     })
