@@ -33,6 +33,10 @@ app.use(methodOverride('_method'))
 
 
 // routes
+// homepage
+app.get('/', (req, res) => {
+    res.render('home.ejs')
+})
 app.use(exerciseRouter)
 
 // tell the app to listen
