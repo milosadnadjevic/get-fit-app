@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Sign Up</title>
+</head>
+<style>
+    body {
+        margin: auto;
+        width: 35%;
+        background-image: url(https://imgur.com/7jBki7h.png);
+    }
+    div {
+        opacity: 70%;
+        border-radius: 5px;
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    label {
+        color: white;
+    }
+    button {
+        border-radius: 10px;
+        opacity: 80%;
+        margin: 5px;
+    }
+    .w3-button {
+        border-radius: 10px;
+        opacity: 80%;   
+    }
+</style>
+<body>
+    <nav><a href="/getfit/workouts"><button class="w3-button w3-red">Home</button></a></nav>
+    <div class="w3-container w3-black">
+      </div>
+      
+      <form class="w3-container" action="/getfit/workouts" method="post">
+        <p>
+        <label>Email:</label>
+        <input class="w3-input" type="email" name="name"></p>
+        <p>
+        <label>Password:</label>
+        <input class="w3-input" type="password" name="category"></p>
+        <p>
+        <label>Video URL</label>
+        <input class="w3-input" type="text" name="videoUrl"></p>
+        <p>
+        <label>Image URL</label>
+        <input class="w3-input" type="text" name="img"></p>
+        <p>
+        <label>Equipement</label>
+        <input class="w3-input" type="text" name="eq"></p>
+        <p>
+        <label>Sets</label>
+        <input class="w3-input" type="number" name="sets"></p>
+        <p>
+        <label>Reps</label>
+        <input class="w3-input" type="text" name="reps"></p>
+        <p>
+        <label>Dificulty</label>
+        <input class="w3-input" type="text" name="dificulty"></p>
+        <p>
+        <input type="submit" value="Save My Exercise" class="w3-button w3-black"></p>
+      </form>
+</body>
+</html>
