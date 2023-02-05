@@ -12,6 +12,7 @@ router.post('/signup', (req, res) => {
     const hashedPassword = bcrypt.hashSync(req.body.password, 10)
     req.body.password = hashedPassword
     User.create(req.body, (err, newUser) => {
+        req.session.userId = newUser._id
         res.redirect('/getfit/workouts')
     })
 })
@@ -30,9 +31,19 @@ router.post('/login', (req, res) => {
         const isMatched = bcrypt.compareSync(req.body.password, foundUser.password)
         if(!isMatched) {
             return res.redirect('/login')
-
         }
+        req.session.userId = foundUser._id
+
         res.redirect('/getfit/workouts')
+    })
+})
+
+
+
+
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        res.redirect('/')
     })
 })
 
