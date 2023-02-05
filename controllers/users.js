@@ -3,7 +3,7 @@ const router = express.Router()
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
 
-
+//sign up routes
 router.get('/signup', (req, res) => {
     res.render('signup.ejs')
 })
@@ -16,5 +16,24 @@ router.post('/signup', (req, res) => {
     })
 })
 
+// login route
+
+router.get('/login', (req, res) => {
+    res.render('login.ejs')
+})
+
+router.post('/login', (req, res) => {
+    User.findOne({email: req.body.email}, (err, foundUser) => {
+        if(!foundUser) {
+            return res.redirect('/login')
+        }
+        const isMatched = bcrypt.compareSync(req.body.password, foundUser.password)
+        if(!isMatched) {
+            return res.redirect('/login')
+
+        }
+        res.redirect('/getfit/workouts')
+    })
+})
 
 module.exports = router
