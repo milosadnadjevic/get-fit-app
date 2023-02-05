@@ -17,6 +17,7 @@
         opacity: 70%;
         border-radius: 5px;
         text-align: center;
+        border-radius: 10px;
     }
     h1 {
         text-align: center;
@@ -33,39 +34,57 @@
         border-radius: 10px;
         opacity: 80%;   
     }
+    nav {
+        text-align: center;
+        align-items: center;
+        margin-top: 10px;
+    }
 </style>
 <body>
     <%- include('./partials/nav') %>
-    <div class="w3-container w3-black">
+    <br>
+    <div class="w3-container w3-red">
+        <h1>New User</h1><p></p>
       </div>
       
-      <form class="w3-container" action="/getfit/workouts" method="post">
+      <form class="w3-container" action="/signup" method="post">
         <p>
-        <label>Email:</label>
-        <input class="w3-input" type="email" name="name"></p>
+            <label>
+                First Name:
+                <input class="w3-input" type="text" name="firstName" required>
+            </label>
+        </p>
         <p>
-        <label>Password:</label>
-        <input class="w3-input" type="password" name="category"></p>
+            <label>
+                Last Name:
+                <input class="w3-input" type="text" name="lastName" required>
+            </label>
+        </p>
         <p>
-        <label>Video URL</label>
-        <input class="w3-input" type="text" name="videoUrl"></p>
+            <label>
+                Age:
+                <input class="w3-input" type="text" name="age" required>
+            </label>
+        </p>
         <p>
-        <label>Image URL</label>
-        <input class="w3-input" type="text" name="img"></p>
+            <label>
+                What are your fitness goals:
+                <input class="w3-input" type="text" name="goal" required>
+            </label>
+        </p>
         <p>
-        <label>Equipement</label>
-        <input class="w3-input" type="text" name="eq"></p>
+            <label>
+                Email:
+                <input class="w3-input" type="email" name="email" required>
+            </label>
+        </p>
         <p>
-        <label>Sets</label>
-        <input class="w3-input" type="number" name="sets"></p>
-        <p>
-        <label>Reps</label>
-        <input class="w3-input" type="text" name="reps"></p>
-        <p>
-        <label>Dificulty</label>
-        <input class="w3-input" type="text" name="dificulty"></p>
-        <p>
-        <input type="submit" value="Save My Exercise" class="w3-button w3-black"></p>
+            <label>
+                Password:
+                <input class="w3-input" type="password" name="password" required>
+            </label>
+        </p>
+        <input type="submit" value="SignUp" class="w3-button w3-black"></p>
       </form>
 </body>
 </html>

@@ -2,6 +2,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const exerciseRouter = require('./controllers/exercises')
+const usersRouter = require('./controllers/users')
 // const Exercise = require('./models/exercise')
 const methodOverride = require('method-override')
 
@@ -37,7 +38,9 @@ app.use(methodOverride('_method'))
 app.get('/', (req, res) => {
     res.render('home.ejs')
 })
+
 app.use(exerciseRouter)
+app.use(usersRouter)
 
 // tell the app to listen
 app.listen(PORT, () => {
