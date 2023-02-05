@@ -33,10 +33,17 @@
         margin: 5px;
         opacity: 100%;
     }
+    nav {
+        text-align: center;
+        align-items: center;
+        margin-top: 10px;
+    }
 </style>
 <body>
-    <nav><a href="/getfit/workouts"><button class="w3-button w3-red">Home</button></a></nav>
-    <h1><div class="w3-panel w3-red w3-card-4">Back Exercises</div></h1>
+    <%- include('./partials/nav') %>
+    <h1>
+        <div class="w3-panel w3-red w3-card-4">Back Exercises</div>
+    </h1>
      <% exercises.forEach(exercise => { %>
     <div class="w3-panel w3-black w3-card-4">
         <p>

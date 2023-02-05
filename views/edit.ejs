@@ -32,10 +32,14 @@
         opacity: 75%;
         margin-top: 5px;
     }
+    nav {
+        text-align: center;
+        align-items: center;
+        margin-top: 10px;
+    }
 </style>
-
 <body>
-    <nav><a href="/getfit/workouts"><button class="w3-button w3-red">Home</button></a></nav>
+    <%- include('./partials/nav') %>
     <div class="w3-container w3-black">
         <h1>Edit <%= exercise.name %></h1>
       </div>
@@ -49,10 +53,10 @@
         <input class="w3-input" type="text" name="category" value="<%= exercise.category %>"></p>
         <p>
         <label>Video URL</label>
-        <input class="w3-input" type="text" name="videoUrl"></p>
+        <input class="w3-input" type="text" name="videoUrl" value="<%= exercise.videoUrl %>"></p>
         <p>
         <label>Image URL</label>
-        <input class="w3-input" type="text" name="img" value="link to your image goes here.png"></p>
+        <input class="w3-input" type="text" name="img" value="<%= exercise.img %>"></p>
         <p>
         <label>Equipement</label>
         <input class="w3-input" type="text" name="eq" value="<%= exercise.eq %>"></p>
