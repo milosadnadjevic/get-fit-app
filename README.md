@@ -2,7 +2,7 @@ GET-FIT-APP
 
 ________________________________________________________________________________________________________
 
-A simple web application which provides a set of routine exercises, with various equipement.
+A simple web application which provides users with a set of routine exercises, with various equipement.
 After Creating an account, User can adopt, edit or create their own exercises and workout routines.
 
 ________________________________________________________________________________________________________
