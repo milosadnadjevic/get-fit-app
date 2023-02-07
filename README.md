@@ -7,11 +7,13 @@ After Creating an account, User can adopt, edit or create their own exercises an
 
 ________________________________________________________________________________________________________
 
-Technologies used:
-JavaScript
-HTML
-CSS
-MongoDB
+Technologies used:<br>
+JavaScript <br> 
+HTML <br>
+CSS <br>
+MongoDB <br>
+Node.js <br>
+Express
 
 ________________________________________________________________________________________________________
 
@@ -26,8 +28,8 @@ https://get-fit-app.herokuapp.com/
 
 ________________________________________________________________________________________________________
 
-Future Enhancements:
-Allowing users to have personalized user pages with their own workout routines
-Adding a feature that will create a workout based on the equipement that user has available at given moment
-Allowing users to add their injuries or any health conditions that they might have to their profile
-Adding a feature that will remove certain exercises/workout routines based on users health condition or injuries
+Future Enhancements:<br>
+Allowing users to have personalized user pages with their own workout routines <br>
+Adding a feature that will create a workout based on the equipement that user has available at given moment<br>
+Allowing users to add their injuries or any health conditions that they might have to their profile<br>
+Adding a feature that will remove certain exercises/workout routines based on users health condition or injuries<br>
